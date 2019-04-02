@@ -1,0 +1,116 @@
+<div *ngIf="hero">
+
+  <h2>#{{hero.id}} №{{hero.number}} {{hero.fio}}</h2>
+
+
+  <!--<form action="">-->
+
+  <div>
+    <label>Номер: </label>
+    <input [(ngModel)]="hero.number" placeholder="number" />
+  </div>
+  <div>
+    <label>Имя: </label>
+    <input [(ngModel)]="hero.fio" placeholder="fio" />
+  </div>
+  <div>
+    <label>Страна: </label>
+    <input [(ngModel)]="hero.country" placeholder="Страна" />
+  </div>
+  <div>
+    <label>Женщина?: </label>
+    <!-- <input [(ngModel)]="hero.women" placeholder="Пол" /> -->
+    <!--<b>{{levelz}}</b>-->
+    <select [(ngModel)]="hero.women">
+      <option *ngFor="let level of levelz" [ngValue]="level.num">{{level.name}}</option>
+    </select> {{hero.women}}
+
+  </div>
+  <div>
+    <label>Возраст: </label>
+    <input type="number" [(ngModel)]="hero.age" placeholder="Возраст" />
+  </div>
+  <div>
+    <label>Регион: </label>
+    <input [(ngModel)]="hero.region" placeholder="Регион" />
+  </div>
+  <div>
+    <label>FAI_NUM: </label>
+    <input [(ngModel)]="hero.FAI_NUM" placeholder="FAI_NUM" />
+  </div>
+  <div>
+    <label>Оплата: </label>
+    <input [(ngModel)]="hero.payment" placeholder="Оплата" />
+  </div>
+  <div>
+    <label>Разряд: </label>
+    <input [(ngModel)]="hero.rank" placeholder="Ранг" />
+  </div>
+  <div>
+    <label>Команда: </label>
+    <input [(ngModel)]="hero.team" placeholder="Команда" />
+  </div>
+  <div>
+    <label>Модель параплана: </label>
+    <input [(ngModel)]="hero.paraglider_model" placeholder="Модель параплана" />
+  </div>
+  <div>
+    <label>Год параплана: </label>
+    <input type="number" [(ngModel)]="hero.paraglider_year" placeholder="Год параплана" />
+  </div>
+  <div>
+    <label>Попытка 1: </label>
+    <input required minlength="4" maxlength="24" type="number" max="5" [(ngModel)]="hero.try1" placeholder="Попытка 1" />
+  </div>
+  <div>
+    <label>Попытка 2: </label>
+    <input type="number" max="5" [(ngModel)]="hero.try2" placeholder="Попытка 2" />
+  </div>
+  <div>
+    <label>Попытка 3: </label>
+    <input type="number" max="5" [(ngModel)]="hero.try3" placeholder="Попытка 3" />
+  </div>
+  <div>
+    <label>Попытка 4: </label>
+    <input type="number" max="5" [(ngModel)]="hero.try4" placeholder="Попытка 4" />
+  </div>
+  <div>
+    <label>Попытка 5: </label>
+    <input type="number" max="5" [(ngModel)]="hero.try5" placeholder="Попытка 5" />
+  </div>
+  <div>
+    <label>Попытка 6: </label>
+    <input type="number" max="5" [(ngModel)]="hero.try6" placeholder="Попытка 6" />
+  </div>
+  <div>
+    <label>Попытка 7: </label>
+    <input type="number" max="5" [(ngModel)]="hero.try7" placeholder="Попытка 7" />
+  </div>
+  <div>
+    <label>Попытка 8: </label>
+    <input type="number" max="5" [(ngModel)]="hero.try8" placeholder="Попытка 8" />
+  </div>
+  <div>
+    <label>Попытка 9: </label>
+    <input type="number" max="5" [(ngModel)]="hero.try9" placeholder="Попытка 9" />
+  </div>
+  <div>
+    <label>Попытка 10: </label>
+    <input type="number" max="5" [(ngModel)]="hero.try10" placeholder="Попытка 10" />
+  </div>
+  <div>
+    <label>Попытка 11: </label>
+    <input type="number" max="5" [(ngModel)]="hero.try11" placeholder="Попытка 11" />
+  </div>
+  <div>
+    <label>Попытка 12: </label>
+    <input type="number" max="5" [(ngModel)]="hero.try12" placeholder="Попытка 12" />
+  </div>
+  <div>
+    <label>Итог: </label>
+    <input type="number" max="5" [(ngModel)]="hero.total" placeholder="Итог" disabled/>
+  </div>
+  <!--</form>-->
+  <button (click)="goBack()">Назад</button>
+  <button (click)="save()">Сохранить</button>
+</div>

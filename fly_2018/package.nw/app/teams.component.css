@@ -1,0 +1,205 @@
+@media screen{
+.selected {
+    background-color: #CFD8DC !important;
+    color: white;
+}
+
+.heroes {
+    margin: 0 0 2em 0;
+    list-style-type: none;
+    padding: 0;
+    width: auto;
+}
+
+.heroes li {
+    cursor: pointer;
+    position: relative;
+    left: 0;
+    background-color: #eee;
+    margin: .5em;
+    padding: .3em 0;
+    height: 1.6em;
+    /*border-radius: 4px;*/
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.heroes li:hover {
+    color: #607D8B;
+    background-color: #DDD;
+    left: .1em;
+}
+
+.heroes li.selected:hover {
+    background-color: #BBD8DC !important;
+    color: white;
+}
+
+.heroes .text {
+    position: relative;
+    top: -3px;
+}
+
+.heroes .badge {
+
+    font-size: small;
+    background-color: #607D8B !important;
+    color: #fff;
+
+}
+.heroes .total{
+
+    font-size: small;
+    background-color: #00485f !important;
+    color: #fff;
+
+}
+
+
+.heroes span {
+    min-width:65px;
+}
+
+button {
+    font-family: Arial;
+    background-color: #eee;
+    border: none;
+    padding: 5px 10px;
+    /*border-radius: 4px;*/
+    cursor: pointer;
+    cursor: hand;
+}
+
+button:hover {
+    background-color: #cfd8dc;
+}
+
+button.delete {
+    float: right;
+    margin-top: 2px;
+    margin-right: .8em;
+    background-color: gray !important;
+    color: white;
+}
+
+.table {
+  width: 100%;
+  max-width: 100%;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  background-color: #fff;
+  border: 1px solid #ccc;
+
+}
+.table > thead > tr,
+.table > tbody > tr,
+.table > tfoot > tr {
+  -webkit-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+.table > thead > tr > th,
+.table > tbody > tr > th,
+.table > tfoot > tr > th,
+.table > thead > tr > td,
+.table > tbody > tr > td,
+.table > tfoot > tr > td {
+  text-align: left;
+  padding: 1rem;
+  vertical-align: top;
+  border-top: 0;
+  -webkit-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+.table > thead > tr > th {
+  font-weight: 400;
+  color: #757575;
+  vertical-align: bottom;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.12);
+}
+.table > caption + thead > tr:first-child > th,
+.table > colgroup + thead > tr:first-child > th,
+.table > thead:first-child > tr:first-child > th,
+.table > caption + thead > tr:first-child > td,
+.table > colgroup + thead > tr:first-child > td,
+.table > thead:first-child > tr:first-child > td {
+  border-top: 0;
+}
+.table > tbody + tbody {
+  border-top: 1px solid rgba(0, 0, 0, 0.12);
+}
+.table .table {
+  background-color: #fff;
+}
+.table .no-border {
+  border: 0;
+}
+
+.table-condensed > thead > tr > th,
+.table-condensed > tbody > tr > th,
+.table-condensed > tfoot > tr > th,
+.table-condensed > thead > tr > td,
+.table-condensed > tbody > tr > td,
+.table-condensed > tfoot > tr > td {
+  padding: 0.8rem;
+}
+/*.table-bordered {
+  border: 0;
+}*/
+.table-bordered > thead > tr > th,
+.table-bordered > tbody > tr > th,
+.table-bordered > tfoot > tr > th,
+.table-bordered > thead > tr > td,
+.table-bordered > tbody > tr > td,
+.table-bordered > tfoot > tr > td {
+  border: 0;
+  border-bottom: 1px solid #fff;
+}
+.table-bordered > thead > tr > th,
+.table-bordered > thead > tr > td {
+  border-bottom-width: 2px;
+}
+.table-striped > tbody > tr:nth-child(odd) > td,
+.table-striped > tbody > tr:nth-child(odd) > th {
+  background-color: #f5f5f5;
+}
+.table-hover > tbody > tr:hover > td,
+.table-hover > tbody > tr:hover > th {
+  background-color: rgba(0, 0, 0, 0.12);
+}
+tr{
+    cursor:pointer;
+}
+tr.selected td{background-color:rgba(0, 181, 0, 0.17) !important;}
+
+.heroTeam{
+  background-color: #ccc;
+  border: 1px solid grey;
+  border-radius: 3px;
+  padding: 1px 1px 1px 4px;
+  margin: 3px 1px 3px 1px
+}
+
+.heroTeam:hover{
+  background-color: grey;
+  color: #fff;
+}
+
+tbody tr:nth-child(2) td{
+  background-color: gold;
+  color: #737373;
+
+}
+tbody tr:nth-child(3) td{
+  background-color: #d0d0d0 !important;
+  color: #737373;
+  
+}
+tbody tr:nth-child(4) td{
+  background-color: #CD7F32;
+  color: #fff;
+}
+}

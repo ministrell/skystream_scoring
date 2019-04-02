@@ -1,0 +1,30 @@
+<h3>Настройки</h3>
+
+<table id="table" class="heroes table table-hover table-mc-light-blue table-bordered table-striped table-condensed">
+    <tbody>
+        <tr>
+            <th>ТИП</th>
+            <th>Главный судья</th>
+            <th>Место проведения</th>
+            <th>Дата утвержения</th>
+            <th>Дата проведения соревнований</th>
+            <th>Год</th>
+        </tr>
+        <tr *ngFor="let option of options" (click)="onSelect(option)" [class.selected]="option === selectedOption">
+            <td hidden>{{option.id}}</td>
+            <td>{{option.titlelist}}</td>
+            <td>{{option.title}}</td>
+            <td>{{option.name}}</td>
+            <td>{{option.flyName}}</td>
+            <td>{{option.date}}</td>
+            <td>{{option.year}}</td>
+        </tr>
+    </tbody>
+</table>
+
+<div *ngIf="selectedOption">
+    <h2>
+        {{selectedOption.titlelist | uppercase}}
+    </h2>
+    <button (click)="gotoDetail()">Редактирование</button>
+</div>

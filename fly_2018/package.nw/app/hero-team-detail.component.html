@@ -1,0 +1,68 @@
+<div *ngIf="team">
+
+  <h2>Редактирование участника из команды №{{team.number}}-{{team.team}}</h2>
+
+
+
+  <div>
+    <label>Номер участника: </label>
+    <input [(ngModel)]="team.number" placeholder="number" />
+  </div>
+
+  <div>
+    <label>Команда: </label>
+    <input [(ngModel)]="team.team" placeholder="Команда" />
+  </div>
+
+  <div>
+    <label>Командная попытка 1: </label>
+    <input [(ngModel)]="team.try1" placeholder="Командная попытка 1" />
+  </div>
+  <div>
+    <label>Командная попытка 2: </label>
+    <input [(ngModel)]="team.try2" placeholder="Командная попытка 2" />
+  </div>
+  <div>
+    <label>Командная попытка 3: </label>
+    <input [(ngModel)]="team.try3" placeholder="Командная попытка 3" />
+  </div>
+  <div>
+    <label>Командная попытка 4: </label>
+    <input [(ngModel)]="team.try4" placeholder="Командная попытка 4" />
+  </div>
+  <div>
+    <label>Командная попытка 5: </label>
+    <input [(ngModel)]="team.try5" placeholder="Командная попытка 5" />
+  </div>
+  <div>
+    <label>Командная попытка 6: </label>
+    <input [(ngModel)]="team.try6" placeholder="Командная попытка 6" />
+  </div>
+  <div>
+    <label>Командная попытка 7: </label>
+    <input [(ngModel)]="team.try7" placeholder="Командная попытка 7" />
+  </div>
+  <div>
+    <label>Командная попытка 8: </label>
+    <input [(ngModel)]="team.try8" placeholder="Командная попытка 8" />
+  </div>
+  <div>
+    <label>Командная попытка 9: </label>
+    <input [(ngModel)]="team.try9" placeholder="Командная попытка 9" />
+  </div>
+  <div>
+    <label>Командная попытка 10: </label>
+    <input [(ngModel)]="team.try10" placeholder="Командная попытка 10" />
+  </div>
+  <div>
+    <label>Командная попытка 11: </label>
+    <input [(ngModel)]="team.try11" placeholder="Командная попытка 11" />
+  </div>
+  <div>
+    <label>Командная попытка 12: </label>
+    <input [(ngModel)]="team.try12" placeholder="Командная попытка 12" />
+  </div>
+
+  <button (click)="goBack()">Назад</button>
+  <button (click)="save()">Сохранить</button>
+</div>

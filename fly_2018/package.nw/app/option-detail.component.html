@@ -1,0 +1,37 @@
+<div *ngIf="option">
+
+    <h2>Редактирование настроек {{option.titlelist}}</h2>
+
+
+
+    <div>
+        <label>ТИП: </label>
+        <input [(ngModel)]="option.titlelist" placeholder="ТИП" />
+    </div>
+
+    <div>
+        <label>Главный судья: </label>
+        <input [(ngModel)]="option.title" placeholder="Главный судья" />
+    </div>
+
+    <div>
+        <label>Место проведения: </label>
+        <input [(ngModel)]="option.name" placeholder="Место проведения" />
+    </div>
+    <div>
+        <label>Дата утвержения: </label>
+        <input [(ngModel)]="option.flyName" placeholder="Дата утвержения" />
+    </div>
+    <div>
+        <label>Дата проведения соревнований: </label>
+        <input [(ngModel)]="option.date" placeholder="Дата проведения соревнований" />
+    </div>
+    <div>
+        <label>Год: </label>
+        <input [(ngModel)]="option.year" placeholder="Год" />
+    </div>
+
+
+
+    <button (click)="save()">Сохранить</button>
+</div>

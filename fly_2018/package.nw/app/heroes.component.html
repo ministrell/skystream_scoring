@@ -1,0 +1,64 @@
+<h3>Список участников</h3>
+<div>
+  <label>ФИО:</label>
+  <input #heroName />
+  <button (click)="add(heroName.value); heroName.value=''">
+    Добавить
+  </button>
+</div>
+
+<button onclick="window.print()">Печать</button>
+
+<table id="table" class="heroes table table-hover table-mc-light-blue table-bordered table-striped table-condensed">
+  <tbody>
+    <tr>
+      <th hidden>ID</th>
+      <th>Номер</th>
+      <th>ФИО</th>
+      <th>Команда</th>
+      <th>Пол</th>
+      <th class="badge">Поп. 1</th>
+      <th class="badge">Поп. 2</th>
+      <th class="badge">Поп. 3</th>
+      <th class="badge">Поп. 4</th>
+      <th class="badge">Поп. 5</th>
+      <th class="badge">Поп. 6</th>
+      <th class="badge">Поп. 7</th>
+      <th class="badge">Поп. 8</th>
+      <th class="badge">Поп. 9</th>
+      <th class="badge">Поп. 10</th>
+      <th class="total">Всего</th>
+      <th>Уд.</th>
+    </tr>
+    <tr *ngFor="let hero of heroes | orderBy: 'total':false" (click)="onSelect(hero)" [class.selected]="hero === selectedHero">
+      <td hidden>{{hero.id}}</td>
+      <td>{{hero.number}}</td>
+      <td>{{hero.fio}}</td>
+      <td>{{hero.team}}</td>
+      <td>{{hero.women ? 'жен' : 'муж'}}</td>
+      <td class="badge">{{hero.try1}}</td>
+      <td class="badge">{{hero.try2}}</td>
+      <td class="badge">{{hero.try3}}</td>
+      <td class="badge">{{hero.try4}}</td>
+      <td class="badge">{{hero.try5}}</td>
+      <td class="badge">{{hero.try6}}</td>
+      <td class="badge">{{hero.try7}}</td>
+      <td class="badge">{{hero.try8}}</td>
+      <td class="badge">{{hero.try9}}</td>
+      <td class="badge">{{hero.try10}}</td>
+      <td class="total">{{hero.total}}</td>
+      <td>
+        <button class="delete" (click)="delete(hero); $event.stopPropagation()">x</button>
+      </td>
+
+    </tr>
+
+  </tbody>
+</table>
+
+<div *ngIf="selectedHero">
+  <h2>
+    {{selectedHero.fio | uppercase}}
+  </h2>
+  <button (click)="gotoDetail()">Редактирование</button>
+</div>

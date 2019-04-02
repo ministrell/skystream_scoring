@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <base href="/">
+  <title>Чемпионат по прыжкам</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="styles.css">
+
+  <!-- Polyfills -->
+  <script src="node_modules/core-js/client/shim.min.js"></script>
+
+  <script src="node_modules/zone.js/dist/zone.js"></script>
+  <script src="node_modules/systemjs/dist/system.src.js"></script>
+
+  <script src="systemjs.config.js"></script>
+  <script>
+    System.import('main.js').catch(function (err) { console.error(err); });
+  </script>
+
+  <script src="node_modules/jquery/dist/jquery.min.js"></script>
+  <script>
+    function formatTbl() {
+      $('.forSumm').each(function (index, el) {
+        let col = [];
+        $('.str-num-' + index).each(function (index, subel) {
+          if ($(subel).text() !== '') {
+            col.push(Number($(subel).text()));
+          }
+        });
+        let biggest = 0;
+        let next_biggest = 0;
+
+        let bigposition = '';
+        let nextbigposition = '';
+
+
+        for (var i = 0; i < col.length; i++) {
+          if (biggest < col[i]) {
+            next_biggest = biggest;
+            biggest = col[i];
+            bigposition = i;
+          } else if (next_biggest < col[i]) {
+            next_biggest = col[i];
+            nextbigposition = i;
+          }
+        }
+        if (col.length > 7) {
+          bigposition = bigposition + 3;
+          nextbigposition = nextbigposition + 3;
+          $('td:nth-child(' + bigposition + ').str-num-' + index).addClass('undervalue');
+          $('td:nth-child(' + nextbigposition + ').str-num-' + index).addClass('undervalue');
+
+        }
+        else if (col.length > 4) {
+          bigposition = bigposition + 3;
+          $('td:nth-child(' + bigposition + ').str-num-' + index).addClass('undervalue');
+        }
+      });
+    }
+    function totalteam() {
+      $('.table_team').each(function (index, el) {
+        let col = [];
+        let summ = 0;
+        $('.team-member-total-' + index).each(function (i, e) {
+          if ($(e).text() !== '') {
+            col.push(Number($(e).text()));
+          }
+        });
+        $('.table_team:eq(' + index + ') tr:last-child td:last-child').html('<b>' + col.reduce((a, b) => a + b, 0) + '</b>');
+      });
+    }
+  </script>
+</head>
+
+<body>
+  <my-app>Загрузка...</my-app>
+</body>
+
+</html>

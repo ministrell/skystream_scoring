@@ -1,0 +1,120 @@
+<h3>Лучшие участники</h3>
+
+
+<button onclick="formatTbl();window.print();" id="btn-print">Печать</button>
+<table id="table" class="heroes table table-hover table-mc-light-blue table-bordered table-striped table-condensed">
+    <tbody>
+        <tr>
+            <th>Номер участника</th>
+            <th>Имя</th>
+            <th>Попытка 1</th>
+            <th>Попытка 2</th>
+            <th>Попытка 3</th>
+            <th>Попытка 4</th>
+            <th>Попытка 5</th>
+            <th>Попытка 6</th>
+            <th>Попытка 7</th>
+            <th>Попытка 8</th>
+            <th>Попытка 9</th>
+            <th>Попытка 10</th>
+            <th>Попытка 11</th>
+            <th>Попытка 12</th>
+            <th>Всего очков</th>
+        </tr>
+        <tr *ngFor="let hero of heroes | orderBy: 'total':false" [routerLink]="['/detail', hero.id]">
+            <td>{{hero.number}}</td>
+            <td>{{hero.fio}}</td>
+            <td>{{hero.try1}}</td>
+            <td>{{hero.try2}}</td>
+            <td>{{hero.try3}}</td>
+            <td>{{hero.try4}}</td>
+            <td>{{hero.try5}}</td>
+            <td>{{hero.try6}}</td>
+            <td>{{hero.try7}}</td>
+            <td>{{hero.try8}}</td>
+            <td>{{hero.try9}}</td>
+            <td>{{hero.try10}}</td>
+            <td>{{hero.try11}}</td>
+            <td>{{hero.try12}}</td>
+            <td>{{hero.total}}</td>
+        </tr>
+    </tbody>
+</table>
+
+<div class="head_print" *ngIf="option">
+    <div class="left">
+        «УТВЕРЖДАЮ»
+        <br> Главный судья, ССВК
+        <br> ____________________ /{{option.title}}/
+        <br> {{option.flyName}}
+    </div>
+    <div class="middle">
+        ИТОГОВЫЙ ПРОТОКОЛ.
+        <br> {{option.titlelist}}.
+    </div>
+    <div class="right">
+        Чемпионат Ленинградской области {{option.year}}.
+        <br> Дисциплины: параплан – полет на точность
+        <br> номер – код вида спорта 1580001411Я
+        <br> {{option.date}}
+        <br> {{option.name}}
+    </div>
+
+</div>
+
+<table id="table_print">
+    <thead>
+    </thead>
+    <tbody>
+        <tr>
+            <th class="verticalTableHeader">
+                Стартовый номер
+            </th>
+            <th>
+                <b>Фамилия, И., О. </b>
+            </th>
+            <th class="verticalTableHeader">Тур №1</th>
+            <th class="verticalTableHeader">Тур №2</th>
+            <th class="verticalTableHeader">Тур №3</th>
+            <th class="verticalTableHeader">Тур №4</th>
+            <th class="verticalTableHeader">Тур №5</th>
+            <th class="verticalTableHeader">Тур №6</th>
+            <th class="verticalTableHeader">Тур №7</th>
+            <th class="verticalTableHeader">Тур №8</th>
+            <th class="verticalTableHeader">Тур №9</th>
+            <th class="verticalTableHeader">Тур №10</th>
+            <th class="verticalTableHeader">Тур №11</th>
+            <th class="verticalTableHeader">Тур №12</th>
+            <th class="verticalTableHeader">Итого</th>
+            <th>Место</th>
+        </tr>
+        <tr *ngFor="let hero of heroes | orderBy: 'total':false; let i = index" class="forSumm">
+            <td>{{hero.number}}</td>
+            <td>{{hero.fio}}</td>
+            <td class="summ str-num-{{i}}">{{hero.try1}}</td>
+            <td class="summ str-num-{{i}}">{{hero.try2}}</td>
+            <td class="summ str-num-{{i}}">{{hero.try3}}</td>
+            <td class="summ str-num-{{i}}">{{hero.try4}}</td>
+            <td class="summ str-num-{{i}}">{{hero.try5}}</td>
+            <td class="summ str-num-{{i}}">{{hero.try6}}</td>
+            <td class="summ str-num-{{i}}">{{hero.try7}}</td>
+            <td class="summ str-num-{{i}}">{{hero.try8}}</td>
+            <td class="summ str-num-{{i}}">{{hero.try9}}</td>
+            <td class="summ str-num-{{i}}">{{hero.try10}}</td>
+            <td class="summ str-num-{{i}}">{{hero.try11}}</td>
+            <td class="summ str-num-{{i}}">{{hero.try12}}</td>
+            <td>{{hero.total}}</td>
+            <td>{{i+1}}</td>
+        </tr>
+    </tbody>
+</table>
+
+<!--<div class="grid grid-pad">
+    <a *ngFor="let hero of heroes | orderBy: 'total'" [routerLink]="['/detail', hero.id]" class="col-1-4">
+        <div class="module hero">
+            <h4>№{{hero.number}} {{hero.fio}}</h4>
+            <p>{{hero.total}}</p>
+        </div>
+    </a>
+</div>-->
+<!-- <hero-search></hero-search> -->
